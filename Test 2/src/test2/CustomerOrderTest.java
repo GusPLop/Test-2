@@ -40,6 +40,7 @@ public class CustomerOrderTest {
 		order.pay("Credicard");
 
 		assertTrue(order.isPaid());
+		assertEquals(10.00, order.getTotalAmount(), 0.01);
 	}
 
 
