@@ -23,7 +23,14 @@ public class CustomerOrderTest {
     
 	// ToDo: Test placing a valid order
 	// Add items to the order, verify the number of items, and check if the total cost is calculated correctly.
-	
+	@Test
+	public void testPlacingVildOrder() {
+		order.addItem("Pepperoni Pizza",12);
+		order.addItem("Garlic Bread",5);
+
+		asserEqual(2, order.getitems().size());
+		asserequal(17, order.getTotalAmount(),1);
+	}
 
 	// ToDo: Test paying for the order
 	// Add an item to the order, pay using a method, and verify that the order is marked as paid.
