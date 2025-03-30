@@ -46,11 +46,17 @@ public class CustomerOrderTest {
 
 	// ToDo: Test inventory update when an order is placed
 	// Add an item to the order and reduce its stock. Verify that the inventory count is updated correctly.
+	@Test
+    public void testInventoryUpdate() {
+		int initialStock = inventory.getItemStock("Cheese Pizza");
+        inventory.updateStock("Cheese Pizza", 2);
 
+        assertEquals(initialStock - 2, inventory.getItemStock("Cheese Pizza"));
+	}
 
 	// ToDo: Test low stock alert
 	// Reduce the stock of an item and verify that the system triggers a low stock alert when the quantity falls below the threshold.
-
+	
 
 	// ToDo: Test order status updates
 	// Set the status of the order and verify that the status is updated correctly.
